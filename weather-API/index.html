@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather API</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <h1>Weather API</h1>
+    <div class="input-div">
+        <input class="form-control" type="text" id="input-city" placeholder="City">
+        <button type="button" class="btn btn-outline-info" style="height: 26px; line-height:10px;"
+            onclick="changeCity()">Add</button>
+    </div><br>
+
+    <div id="weather-container">
+        <p id="city" style="font-size: 20px;"></p>
+        <img src="" alt="" id="icon">
+        <div id="temperature"></div>
+    </div>
+
+</body>
+
+<style>
+    body {
+        font-family: monospace;
+        background-color: #0b2136;
+        color: white;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    #input-city {
+        width: 26%;
+        margin-left: 37%;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    #weather-container {
+        font-size: 17px;
+    }
+</style>
+
+</html>
