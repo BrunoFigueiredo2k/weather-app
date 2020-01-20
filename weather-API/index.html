@@ -6,51 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather API</title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <h1>Weather API</h1>
-    <div class="input-div">
-        <input class="form-control" type="text" id="input-city" placeholder="City">
-        <button type="button" class="btn btn-outline-info" style="height: 26px; line-height:10px;"
-            onclick="changeCity()">Add</button>
-    </div><br>
+    <header>
+        <div class="header-content">
+            <div class="title">
+                <p><img src="img/icon.png" id="logo">Weather App</p>
+            </div>
+            <div id="header-date"></div>
+        </div>
+    </header>
 
-    <div id="weather-container">
-        <p id="city" style="font-size: 20px;"></p>
-        <img src="" alt="" id="icon">
-        <div id="temperature"></div>
+    <div class="sidebar-menu">
+        <div class="content-sidebar">
+            <li id="home-li"><i class="fas fa-home"></i></li>
+            <li id="search-li"><i class="fas fa-search"></i></li>
+            <li id="info-li"><i class="fas fa-info"></i></li>
+        </div>
+    </div>
+
+    <div class="section1">
+        <div class="section1-content">
+            <h2 style="font-size: 32px;">Climate is what we expect, weather is what we get.</h2>
+            <p style="font-size: 20px;">-<i> Mark Twain</i></p>
+            <div class="scroll-down" id="scroll-div">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="section2">
+        <div class="section2-content">
+            <h1 class="title-app">Search cities</h1>
+            <i>Use this to search for any city in the world. Don't forget to check the
+                spelling in case there is no
+                output.</i><br><br>
+
+            <!-- City input search -->
+            <div class="input-div">
+                <input class="form-control" type="text" id="input-city" placeholder="search city">
+                <button onclick="changeCity()" id="search-btn"><i class="fa fa-search"></i></button>
+            </div><br>
+
+            <!-- Error message -->
+            <div class="error" id="error"><b>Error: the input is empty or incorrect.</b></div><br>
+
+            <!-- Weather card displaying weather info of city -->
+            <div class="card text-center" id="card-info">
+                <div id="weather-container">
+                    <p id="city" style="font-size: 30px;"></p>
+                    <img src="" alt="" id="icon">
+                    <div id="temperature"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section3">
+        <div class="section3-content">
+            <img src="img/openWeatherMap.png" class="info-img" alt="OpenWeather image">
+            <div class="info-txt">
+                <h3>What I used</h3>
+                <p>For this app I used the open source API OpenWeather. Openweather is a small IT company,
+                    established in 2014 by a group of engineers and experts in Big Data, data processing, and satellite
+                    imagery processing. They do very simple and fast APIs to work with their vast database of weather
+                    data,
+                    satellite imagery and other environmental data. 1.6 million developers work with their APIs,
+                    from
+                    individuals and small businesses to enterprises. They process 100,000 calls per sec.</p>
+                <a href="https://openweathermap.org/" target="_blank"><button style="margin-top: 10px;" class="more-btn"
+                        id="more-btn">Learn more</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2020 | Bruno Figueiredo | All Rights Reserved</p>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/bruno-figueiredo-953906177/" target="_black"><i
+                        class="fab fa-linkedin"></i></a>
+            </li>
+            <li><a href="https://www.youtube.com/channel/UChQEuENS7pDijN19CYBJIkw?view_as=subscriber" target="_black"><i
+                        class="fab fa-google"></i></a></li>
+            <li><a href="https://github.com/BrunoFigueiredo2k" target="_black"><i class="fab fa-github"></i></a></li>
+        </ul>
     </div>
 
 </body>
 
-<style>
-    body {
-        font-family: monospace;
-        background-color: #0b2136;
-        color: white;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-    }
-
-    #input-city {
-        width: 26%;
-        margin-left: 37%;
-        margin-bottom: 15px;
-        text-align: center;
-    }
-
-    #weather-container {
-        font-size: 17px;
-    }
-</style>
 
 </html>
